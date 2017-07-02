@@ -27,7 +27,7 @@ RUN yum -y update \
         && make \
         && make install \
     ) \
-    \
+    && rm re2c.tgz \
     && wget -q $PHALCON_URL -O phalcon.tgz \
     && mkdir /usr/local/src/phalcon \
     && tar zxf phalcon.tgz -C /usr/local/src/phalcon --strip-components=1 \
