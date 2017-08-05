@@ -1,5 +1,7 @@
 FROM inklabs/php71-fpm
 
+LABEL maintainer="Jamie Isaacs <pdt256@gmail.com>"
+
 WORKDIR /usr/local/src
 
 ENV PHALCON_URL="https://github.com/phalcon/cphalcon/archive/v3.2.0.tar.gz" \
@@ -41,4 +43,6 @@ RUN yum -y update \
 
 COPY ./phalcon.ini /usr/local/etc/php/conf.d/phalcon.ini
 
+EXPOSE 9000
+CMD ["php-fpm"]
 USER www-data
